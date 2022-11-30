@@ -1,6 +1,7 @@
 package guis;
 
 import modelo.Jugador;
+import modelo.Seleccion;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,6 +13,7 @@ public abstract class Ventana extends JFrame{
         this.setSize(500,350);
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        this.setVisible(true);
     }
 
     protected JTextField generarCampoDeTexto(int x, int y, int ancho, int largo) {
@@ -36,12 +38,12 @@ public abstract class Ventana extends JFrame{
         return etiqueta;
     }
 
-    protected JComboBox generarComboBox(List<Jugador> jugadoresList, int x, int y, int ancho, int largo) {
+    protected JComboBox generarComboBox(List<Seleccion> listaSelecciones, int x, int y, int ancho, int largo) {
         JComboBox <String> comboBox = new JComboBox<String>();
         this.add(comboBox);
         comboBox.setBounds(x,y,ancho,largo);
 
-        for (Jugador j: jugadoresList) {
+        for (Seleccion j: listaSelecciones) {
             comboBox.addItem(j.getNombre());
         }
 

@@ -10,13 +10,23 @@ public class Seleccion {
     private String rutaBandera;
     private ArrayList<Jugador> jugadores = new ArrayList<>();
 
-    public Seleccion(String id, String nombre, String ranking, String bandera, ArrayList<Jugador> jugadores) {
+    public Seleccion(String id, String nombre, String ranking, String rutaBandera, ArrayList<Jugador> jugadores) {
         this.id = id;
         this.nombre = nombre;
         this.ranking = ranking;
         this.jugadores = jugadores;
-        this.rutaBandera = bandera;
+        this.rutaBandera = rutaBandera;
     }
+
+    /*public void buscarPais(String rut) {
+        for (Estudiante e: this.estudiantes) {
+            if(e.getRut().equals(rut)) {
+                return e;
+            }
+        }
+
+        throw new EstudianteNoEncontradoException(rut);
+    }*/
 
     public String getRutaBandera() {
         return rutaBandera;

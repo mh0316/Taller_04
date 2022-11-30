@@ -1,5 +1,7 @@
 package guis;
 
+import modelo.Seleccion;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,8 +12,9 @@ public class VentanaPlayers extends Ventana implements ActionListener {
     private JButton botonBack;
     private JComboBox listaPaises;
     private JLabel etiquetaOficcialFormation;
+    private JTextArea informacionSeleccion;
 
-    public VentanaPlayers(){
+    public VentanaPlayers(Seleccion seleccion){
         this.setTitle("Players");
 
         etiquetaOficcialFormation = generarEtiqueta("Oficcial formation",50,20,100,30);

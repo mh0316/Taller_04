@@ -1,10 +1,16 @@
 package main;
 
+import datos.DatosSeleccion;
 import guis.VentanaTeams;
+import modelo.Seleccion;
+
+import java.util.ArrayList;
 
 public class Launcher {
     public static void main(String[] args) {
-        VentanaTeams ventanaTeams = new VentanaTeams();
-        ventanaTeams.setVisible(true);
+        ArrayList<Seleccion> selecciones = new ArrayList<>();
+        DatosSeleccion.leerArchivoSelecciones(selecciones,"teams.txt");
+        new VentanaTeams(selecciones);
+        //ventanaTeams.setVisible(true);
     }
 }
